@@ -7,7 +7,12 @@ im2 = imresize(im2,[864 1152]);
 msk = roipoly(im1);
 msk = double(msk); % Mask wrt source
 
-% Texture
+h=figure;
+h,imshow(im2);
+[j1,i1] = getpts(h);
+j1 = round(j1);i1 = round(i1);
+
+% Texture replication
 % im2 = zeros(100,100,3);
 % im2(:,:,1) = 0;im2(:,:,2) = 0;im2(:,:,3) = 0;
 % im2 = uint8(im2);
@@ -19,11 +24,6 @@ msk = double(msk); % Mask wrt source
 rmin = min(r);rmax = max(r);
 cmin = min(c);cmax = max(c);
 msk2 = msk(rmin:rmax,cmin:cmax); % Cropped mask
-
-h=figure;
-h,imshow(im2);
-[j1,i1] = getpts(h);
-j1 = round(j1);i1 = round(i1);
 
 if mod(size(msk2,1),2) == 0
     r1 = size(msk2,1)/2;
