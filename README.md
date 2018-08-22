@@ -1,2 +1,2 @@
 # PoissonBlending
-Matlab implementation of Poisson image blending
+Matlab implementation of Poisson blending
